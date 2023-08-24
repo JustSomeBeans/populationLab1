@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 int main() {
     int population;  //starting population
     int populationEnd; //target population
@@ -15,7 +16,7 @@ int main() {
         return 1;
     }
     do {  //loop for finding number of iterations necessary to reach target population
-        population = population - (population / 4) + (population / 3);
+        population = round(population - (population / 4) + (population / 3));
         count++;
     }  while(population < populationEnd); //loop condition
     printf("It took %d years \n", count); //prints final population
